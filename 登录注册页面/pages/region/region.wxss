@@ -1,0 +1,30 @@
+/* pages/region/region.wxss */
+page{
+  height: 100%;
+  background-image: url(https://hbimg.huabanimg.com/0c9a1b1ac6fd824a3f9ea4343d96a02ba8a2a8aa9049f-tpnlRF_fw658);
+}
+
+ .title-container{
+   font-size: 30px;
+   text-align: center;
+   margin-top: 80px;
+   font-weight: bold;
+   margin-bottom: 30px;
+ }
+ .password,.repwd,.phonenum,.username{
+   height: 30px;
+   width: 60%;
+   border-bottom: 1px solid white;
+   padding-left: 16px;
+   margin-left: 20%;
+   color: black;
+   margin-top: 10px;
+ }
+ button{
+   width: 50%;
+   margin-top:40px;
+ }
+.style{
+  font-size: 14px;
+   color: whitesmoke;
+}
