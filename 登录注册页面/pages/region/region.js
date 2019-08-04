@@ -1,5 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-WXAPI.init2('http://127.0.0.1:8081', 'wxapi')
 
 Page({
   data: {
