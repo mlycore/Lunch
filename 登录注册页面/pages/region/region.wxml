@@ -1,20 +1,19 @@
 <!--pages/region/region.wxml-->
 <view class='title-container'>欢迎注册啊</view>
 <view class='information'>
-   <view class='username'>
-     <input placeholder='请输入用户名' type='text' bindinput='username' placeholder-class='style'/>
-   </view>
-    <view class='password'>
-     <input placeholder='请输入密码' type='password' bindinput='password' placeholder-class='style'/>
-    </view>
-     <view class='repwd'>
-       <input placeholder='请再次输入密码'    type='password' bindinput='repwd' placeholder-class='style'/>
-      </view>
-      <view class='phonenum'>
-         <input placeholder='请输入手机号码' type='text' bindinput='phonenum' placeholder-class='style'/>
-      </view>
+  <view class='username'>
+    <input placeholder='请输入用户名' type='text' bindinput='username' placeholder-class='style' />
   </view>
-        <view>
-       <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap='region'>注册</button>
-        </view>
-
+  <view class='password'>
+    <input placeholder='请输入密码' type='password' bindinput='password' placeholder-class='style' />
+  </view>
+  <view class='repwd'>
+    <input placeholder='请再次输入密码' type='password' bindinput='repwd' placeholder-class='style' />
+  </view>
+  <view class='phonenum'>
+    <input placeholder='请输入手机号码' type='text' bindinput='phonenum' placeholder-class='style' />
+  </view>
+</view>
+<view>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap='region'>注册</button>
+</view>

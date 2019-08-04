@@ -1,57 +1,72 @@
+const WXAPI = require('apifm-wxapi')
+
 Page({
   data: {
-    username:'',
+    username: '',
     phonenum: '',
     password: '',
-    repwd:''
+    repwd: ''
   },
 
   // 获取输入账号
-  username: function (e) {
+  username: function(e) {
     this.setData({
       username: e.detail.value
     })
   },
 
   // 获取输入密码
-password: function (e) {
+  password: function(e) {
     this.setData({
       password: e.detail.value
     })
   },
   // 获取第二次输入密码
- repwd: function (e) {
+  repwd: function(e) {
     this.setData({
       repwd: e.detail.value
     })
   },
   // 获取输入手机号码
- phonenum: function (e) {
+  phonenum: function(e) {
     this.setData({
       phonenum: e.detail.value
     })
   },
   // 注册
-  region: function () {
+  region: function() {
     if (this.data.phonenum.length == 0 || this.data.password.length == 0 || this.data.repwd.length == 0 || this.data.username.length == 0) {
       wx.showToast({
         title: '请输入信息',
         icon: 'loading',
         duration: 2000
       })
-    }else if(this.data.repwd!=this.data.password){
+    } else if (this.data.repwd != this.data.password) {
       wx.showToast({
         title: '密码有误',
         icon: 'loading',
         duration: 2000
       })
-    }
-     else {
-      // 这里修改成跳转的页面
-      wx.showToast({
-        title: '注册成功',
-        icon: 'success',
-        duration: 2000
+    } else {
+      // 数据保存到数据库
+      WXAPI.register_username({
+        username: this.data.username,
+        pwd: this.data.password
+      }).then(res => {
+        console.log(res)
+        if (res.code == 0) {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'success',
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: res.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        }
       })
     }
   }
