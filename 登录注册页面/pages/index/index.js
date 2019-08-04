@@ -1,3 +1,6 @@
+const WXAPI = require('apifm-wxapi')
+WXAPI.init2('http://127.0.0.1:8081', 'wxapi')
+
 Page({
   data: {
     phone: '',
@@ -28,10 +31,26 @@ Page({
       })
     } else {
       // 这里修改成跳转的页面
-      wx.showToast({
-        title: '登录成功',
-        icon: 'success',
-        duration: 2000
+      WXAPI.login_username({
+        username: this.data.phone,
+        pwd: this.data.password,
+        deviceId: 'wxapp',
+        deviceName: 'Lunch'
+      }).then(res => {
+        console.log(res)
+        if (res.code == 0) {
+          wx.showToast({
+            title: '登录成功',
+            icon: 'success',
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: res.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        }
       })
     }
   }
