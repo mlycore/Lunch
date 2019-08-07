@@ -1,5 +1,5 @@
 const WXAPI = require('apifm-wxapi')
-
+WXAPI.init('wxapi)
 Page({
   data: {
     username: '',
