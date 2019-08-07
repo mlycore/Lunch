@@ -1,5 +1,5 @@
 const WXAPI = require('apifm-wxapi')
-WXPI.init('wxapi)
+WXAPI.init('wxapi)
 Page({
   data: {
     phone: '',
